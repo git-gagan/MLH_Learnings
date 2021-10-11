@@ -7,7 +7,6 @@ def get_movie():
         id = random.randint(1000000,3999999)
         data = requests.get(f"http://www.omdbapi.com/?i=tt{id}&apikey=#myprivatekey").json()
         if data['Response'] == "True":
-            print(data)
             if data["Year"] == "N\A" or "Episode" in data["Title"]:
                 continue
             break
